@@ -23,52 +23,52 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776</button>
     </header>
     
-    <main>
-        <section id="inicio" class="hero">
-            <h2>Diseñador Web y Gráfico 🎨</h2>
-            <p>Transformando ideas en experiencias visuales impactantes y funcionales.</p>
-            <img src="img\Banner horizontal restaurante fotos negro.png" alt="Muestra de Diseño Web" class="multimedia-img">
-        </section>
-        
-        <section id="productos">
-            <h3>Mis Servicios</h3>
-            <div class="productos-container">
-                <div class="card"><h4>Diseño Web</h4><p>Sitios modernos y responsivos.</p></div>
-                <div class="card"><h4>Branding</h4><p>Identidad visual corporativa.</p></div>
-                <div class="card"><h4>Folletería</h4><p>Diseño de flyers y catálogos.</p></div>
+    <main> 
+        <section id="inicio" class="hero-page-section">
+            <div class="hero-content">
+                <h1>Osky Diseño Web y Gráfico</h1>
+                <p class="subtitle"> Transformando ideas en experiencias visuales impactantes y funcionales</p>
+                <a href="productos.html" class="btn">Ver Mis Servicios</a>
             </div>
-        </section>
-        
-        <section id="reseñas">
-            <h3>Lo que dicen mis clientes</h3>
-             <div class="reseñas-grid">
-                <blockquote class="reseña">"Increíble trabajo y profesionalismo."</blockquote>
-                <blockquote class="reseña">"El diseño superó mis expectativas."</blockquote>
+
+            <div class="hero-banner">
+                <img src="./img/Banner horizontal restaurante fotos negro.png" alt="Muestra de Diseños" class="Multimedia-img">
             </div>
-        </section>
-
-        <section id="contacto">
-            <h3>Contáctame</h3>
-            <form action="https://formspree.io/f/xvgwzvnj" method="POST" class="contact-form">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-                <button type="submit">Enviar Mensaje</button>
-            </form>
+            
+            <div class="summary-cards">
+                <h2> Mi Enfoque</h2>
+                <div class="card-grid-small">
+                    <div class="summary-cards violet-bg">
+                        <h3>Creatividad</h3>
+                        <p> Diseños que no solo se ven bien, si no que cuentan una historia</p>    
+                    </div>
+                    <div class="summary-cards light-bg">
+                        <h3> Funcionalidad </h3>
+                        <p> Sitios Web optimizados para velocidad y experiencia de usuario (UX)</p>
+                    </div>
+                    <div class="summary-cards violet-bg">
+                        <h3> Responsividad </h3>
+                        <p> Proyectos Perfectos en cualquier dispositivo, de movil a destokp</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 [Tu Nombre] | Diseño Web y Gráfico</p>
-        </footer>
+        <p>&copy; 2025 Osky Diseños | Protfolio de Diseño Web y Gráfico </p>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        const menuToggle = document.querySelector('.menu-toggle');  
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>
