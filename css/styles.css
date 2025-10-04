@@ -1,0 +1,246 @@
+/* Paleta de Colores Violeta
+   - Violeta Intenso (Principal): #6A5ACD (Slate Blue)
+   - Violeta Pastel (Secundario/Fondo): #E6E6FA (Lavender)
+   - Violeta Oscuro (Texto/Hover): #483D8B (Dark Slate Blue)
+   - Fondo Base: #FFFFFF
+*/
+
+/* Reset Básico y Tipografía (Punto 3) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Google Font */
+    line-height: 1.6;
+    background-color: #FFFFFF; 
+    color: #333333;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Google Font */
+    color: #6A5ACD; 
+    margin-bottom: 0.8rem;
+}
+
+/* --- Estilos del Header y Navegación (Punto 3) --- */
+header {
+    background-color: #6A5ACD; /* Propiedad de background: Color sólido */
+    color: white;
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el Logo SVG en el Header */
+.header-logo {
+    /* AJUSTE PARA EL TAMAÑO DEL LOGO: 80px de alto */
+    height: 80px; 
+    width: auto; 
+    display: block;
+    margin: 0; /* Asegura que no haya márgenes extra */
+}
+
+header h1 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0; /* Asegura que este h1 (si estuviera) no afecte el espacio */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #E6E6FA;
+}
+
+/* --- Estilos de Secciones y Multimedia --- */
+main {
+    padding: 0 5%;
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #E6E6FA;
+}
+
+.hero {
+    /* Propiedad de background aplicada: Degradado */
+    background: linear-gradient(135deg, #E6E6FA 0%, #FFFFFF 100%); 
+    text-align: center;
+    padding: 4rem 5%;
+    border-radius: 8px;
+    margin-top: 0;
+}
+
+.hero h2 {
+    margin-bottom: 0.5rem; 
+}
+/* Estilos para la imagen del Banner (Punto 5) */
+.multimedia-img {
+    max-width: 100%; /* Totalmente responsiva */
+    
+    height: 200px; 
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    
+    display: block;
+    margin: 1.5rem auto 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================================
+   4.1. Sección "Productos" con Flexbox (Diseño Responsivo)
+   ==================================== */
+.productos-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.card {
+    /* Flexbox: 300px es la base mínima para que salte de línea */
+    flex: 1 1 300px; 
+    max-width: 350px;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-left: 5px solid #6A5ACD; 
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ====================================
+   4.2. Sección "Reseñas" con Grid (Diseño Responsivo)
+   ==================================== */
+.reseñas-grid {
+    display: grid; 
+    /* Móvil: 1 columna por defecto */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.reseña {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-left: 5px solid #6A5ACD;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+/* Grid para Tablet: 2 columnas */
+@media (min-width: 768px) {
+    .reseñas-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Grid para Desktop: 3 columnas */
+@media (min-width: 1024px) {
+    .reseñas-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+
+/* ====================================
+   4.3. Sección "Contacto" con Media Queries (Diseño Responsivo)
+   ==================================== */
+
+/* Diseño Base (Móvil) */
+.contact-section {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 90%; 
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #E6E6FA;
+    border-radius: 8px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #483D8B;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form button {
+    background-color: #6A5ACD; 
+    color: white;
+    border: none;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%; /* Botón ocupa todo el ancho en móvil */
+}
+
+.contact-form button:hover {
+    background-color: #483D8B;
+}
+
+/* Media Query para Pantallas Medianas (Tablet/Desktop) */
+@media (min-width: 600px) {
+    .contact-form {
+        max-width: 600px; 
+        padding: 2rem;
+        text-align: left; 
+    }
+
+    .contact-form button {
+        width: auto; /* El botón es más pequeño en desktop */
+        float: right; 
+    }
+}
+
+/* --- Estilos del Footer (Punto 3) --- */
+footer {
+    background-color: #E6E6FA; /* Propiedad de background: Color pastel */
+    color: #483D8B;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
