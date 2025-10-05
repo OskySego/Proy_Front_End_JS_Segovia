@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web & Folletería - Osky Diseños</title>
-    <link rel="stylesheet" href="./css/styles.css"> 
+    <title>Inicio | Osky Diseños - Web & Branding</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,15 +30,17 @@
         <section id="inicio" class="hero-page-section">
             <div class="hero-content">
                 <h1>Osky Diseño Web y Gráfico</h1>
-                <p class="subtitle"> Transformando ideas en experiencias visuales impactantes y funcionales</p>
+                <p class="subtitle">Transformando ideas en experiencias visuales impactantes y funcionales.</p>
                 <a href="productos.html" class="cta-button">Ver Mis Servicios</a> 
             </div>
 
             <div class="hero-banner">
                 <img src="./img/Banner horizontal restaurante fotos negro.png" alt="Muestra de Diseños" class="multimedia-img">
             </div>
-            
-            <div class="summary-cards">
+        </section>
+        
+        <section class="summary-section">
+             <div class="summary-cards">
                 <h2> Mi Enfoque</h2>
                 <div class="card-grid-small">
                     <div class="summary-card violet-bg">
@@ -63,13 +65,11 @@
     </footer>
 
     <script>
-        // JS CORREGIDO: Apuntamos a las clases correctas y más específicas
         const nav = document.querySelector('.main-nav');
         const menuToggle = document.querySelector('.menu-toggle');  
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('open');
         });
     </script>
-
 </body>
 </html>
