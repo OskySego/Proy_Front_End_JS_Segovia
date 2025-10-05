@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño Web & Folletería - Osky Diseños</title>
-    <link rel="stylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="./css/styles.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-    <div class="logo">
-        <a href="#inicio">
-            <img src="./img/Logo for Osky Diseños.svg" alt="Osky Diseños Logo" class="header-logo">
-        </a>
-    </div>
-        <nav>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/Logo for Osky Diseños.svg" alt="Osky Diseños Logo" class="header-logo">
+            </a>
+        </div>
+        <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li> 
+                <li><a href="productos.html">Servicios</a></li>
                 <li><a href="resenas.html">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir Menú">&#9776</button>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
     </header>
     
     <main> 
@@ -31,27 +31,27 @@
             <div class="hero-content">
                 <h1>Osky Diseño Web y Gráfico</h1>
                 <p class="subtitle"> Transformando ideas en experiencias visuales impactantes y funcionales</p>
-                <a href="productos.html" class="btn">Ver Mis Servicios</a>
+                <a href="productos.html" class="cta-button">Ver Mis Servicios</a> 
             </div>
 
             <div class="hero-banner">
-                <img src="./img/Banner horizontal restaurante fotos negro.png" alt="Muestra de Diseños" class="Multimedia-img">
+                <img src="./img/Banner horizontal restaurante fotos negro.png" alt="Muestra de Diseños" class="multimedia-img">
             </div>
             
             <div class="summary-cards">
                 <h2> Mi Enfoque</h2>
                 <div class="card-grid-small">
-                    <div class="summary-cards violet-bg">
+                    <div class="summary-card violet-bg">
                         <h3>Creatividad</h3>
                         <p> Diseños que no solo se ven bien, si no que cuentan una historia</p>    
                     </div>
-                    <div class="summary-cards light-bg">
+                    <div class="summary-card light-bg">
                         <h3> Funcionalidad </h3>
                         <p> Sitios Web optimizados para velocidad y experiencia de usuario (UX)</p>
                     </div>
-                    <div class="summary-cards violet-bg">
+                    <div class="summary-card violet-bg">
                         <h3> Responsividad </h3>
-                        <p> Proyectos Perfectos en cualquier dispositivo, de movil a destokp</p>
+                        <p> Proyectos Perfectos en cualquier dispositivo, de móvil a desktop</p>
                     </div>
                 </div>
             </div>
@@ -59,11 +59,12 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Osky Diseños | Protfolio de Diseño Web y Gráfico </p>
+        <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico </p>
     </footer>
 
     <script>
-        const nav = document.querySelector('nav');
+        // JS CORREGIDO: Apuntamos a las clases correctas y más específicas
+        const nav = document.querySelector('.main-nav');
         const menuToggle = document.querySelector('.menu-toggle');  
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('open');
