@@ -6,7 +6,7 @@
  -Fondo Base: #FFFFFF (white)
 */
 /* --- Base y Tipografía --- */
-{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -69,8 +69,8 @@ main {
 }
 .main-nav ul li a {
     text-decoration: none;
-    color: white
-    font-weight: 500;
+    color: white;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     display: block;
     border-radius: 4px;
@@ -193,10 +193,206 @@ cta.cta-button:active {
     text-align: left;
  }
 
- .card-product img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+ .card-product h4 {
+    color: #6a5acd;
+    font-family: 'playfair display', serif;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #E6E6FA;
+    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
  }
+
+ .feature {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+ }
+
+ .feature li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #E6E6FA;
+    color: #483D8B;
+    font-size: 0.95rem;
+ }
+
+ .cta-small {
+    display: inline-block;
+    background-color: #d8bfd8;
+    color: #483D8B;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1rem;
+    box-shadow: 0 4px #483D8B; /* Efecto 3d */
+    transition: all 0.2s ease;
+ }
+
+ .cta-small:hover{
+    background-color: #6a5acd;
+    color: white;
+ }
+
+ /* --- 6. Sección Reseñas (Grid Estético) --- */
+ .reseñas-grid-page {
+    display: grid; /* movil: 1 columna */
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 2rem;
+ }
+
+ .reseñas-item {
+    background-color: #E6E6FA;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #6a5acd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+ }
+
+ .reseñas-item p {
+    font-style: italic;
+    margin-bottom: 0.7rem;
+ }
+
+ .reseñas-item footer {
+    font-weight: 700;
+    color: #483D8B;
+    font-size: 0.9rem;
+ }
+
+ /* Grid para desktop/tablet */
+    @media (min-width: 768px) {
+        .reseñas-grid-page {
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+        }
+    }
+
+/* --- 7. Sección contacto (Media Queries) --- */
+.contact-section-page {
+    padding: 3rem 0 6rem 0;
+}
+.contact-form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #d8bfd8;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #483D8B;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'monstserrat', sans-serif;
+}
+
+.contact-form button {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%; /* Botón de ancho completo en móvil */
+}
+
+.contact-form button:hover {
+    background-color: #483D8B;
+}
+
+/* --- 8. Media Queries Globales y Desktop (Diseño Novedoso) --- */
+@media (min-width: 768px) {
+    /* Header */
+    .menu-toggle {
+        display: none; /* Oculto en tablet y desktop */
+    }
+    .main-nav {
+        display: block;
+    }
+
+    /* Diseño HERO: Colocar el texto al lado del banner */
+    .hero-page-section {
+        flex-direction: row; 
+        text-align: left;
+        align-items: center;
+        padding-top: 6rem;
+    }
+    .hero-banner {
+        flex: 1 1 50%;
+        margin-right: 2rem;
+    }
+    .hero-content {
+        flex: 1;
+        padding-right: 30px;
+    }
+   /* Contacto: Botón a la derecha */
+   .contact-form button {
+        width: auto;
+        float: right;
+   }
+}
+
+/* --- 9. Footer (Diseño Simple y Efectivo) --- */
+footer {
+    background-color: #E6E6FA;
+    color: #483D8B;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Empuja al footer hacia abajo */
+}
+
+/* --- 10. Menú Hamburguesa (Para pantallas pequeñas) --- */
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú en móvil */
+    }
+    .main-nav {
+        display: none; /* Ocultar el menú por defecto */
+        position: absolute;
+        top: 70px; /* Debajo del header */
+        right: 5%;
+        background-color: #6a5acd;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 200px;
+    }
+    .main-nav.open {
+        /* Estado abierto del menú */
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    .main-nav ul li {
+        margin: 0;
+    }
+    .main-nav ul li a {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    .main-nav.active {
+        display: block; /* Mostrar el menú cuando esté activo */
+    }
+}
