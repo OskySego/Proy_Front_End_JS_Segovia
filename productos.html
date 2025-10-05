@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reseñas | Osky Diseños </title>
+    <link rel="stylesheet" href="css\styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/Logo for Osky Diseños.svg" alt="Osky Diseños Logo" class="header-logo">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li> 
+                <li><a href="productos.html">Servicios</a></li>
+                <li><a href="resenas.html" class="active">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+    </header>
+    
+
 <main class="page-content">
     <section class="page-header"> 
         <h2> Mis Servicios y Productos </h2>
@@ -38,4 +66,16 @@
             <a href="contacto.html" class="cta-small"> ¡Cotizar! </a>
         </div>
     </section>  
+    <footer>
+        <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico </p>
+    </footer>
+    <script>
+        const nav = document.querySelector('.main-nav');
+        const toggle = document.querySelector('.menu-toggle');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-open');
+        });
+    </script>
 </main>
+</body>
+</html>
