@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Monstserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: #FFFFFF;
     color: #333333; 
@@ -27,7 +27,11 @@ h1, h2, h3 {
     color: #483D8B; /* Violeta Oscuro para títulos principales*/
     margin-bottom: 0.5rem;
 }
-
+.subtitle {
+    font-size: 1.1rem;
+    color: #6a5acd; /* Violeta Intenso para subtítulos */
+    margin-bottom: 2rem;
+}
 main {
     flex: 1; /* Para que el main tome todo el espacio disponible */
     padding: 0.5%;
@@ -77,7 +81,7 @@ main {
     transition: background-color 0.3s ease;
 }
 .main-nav ul li a:hover 
-.main-nav ul li :active{
+.main-nav ul li a.active{
     background-color: #483D8B; /* Violeta Oscuro al pasar el mouse/activo */
 }
 
@@ -118,7 +122,7 @@ main {
     transition: all 0.2s ease;
 }
 
-cta.cta-button:active {
+.cta-button:active {
     transform: translateY(2px);
     box-shadow: 0 2px #483D8B;
 }
@@ -150,15 +154,17 @@ cta.cta-button:active {
 }
 
 .violet-bg {
-    background-color: #E6E6FA;
+    background-color: #6a5acd;
+    color: white;
 }
 
 .violet-bg h3 {
     color: white;
 }
 
-.ligth-bg {
+.light-bg {
     background-color: #E6E6FA;
+    color: #333333;
 }
 
 /* --- 4. Estilos Comunes de paginas secundarias --- */
@@ -202,13 +208,13 @@ cta.cta-button:active {
     margin-bottom: 1rem;
  }
 
- .feature {
+ .features {
     list-style: none;
     margin: 1rem 0;
     padding: 0;
  }
 
- .feature li {
+ .features li {
     padding: 0.3rem 0;
     border-bottom: 1px solid #E6E6FA;
     color: #483D8B;
@@ -234,14 +240,14 @@ cta.cta-button:active {
  }
 
  /* --- 6. Sección Reseñas (Grid Estético) --- */
- .reseñas-grid-page {
+ .reseña-grid-page {
     display: grid; /* movil: 1 columna */
     grid-template-columns: 1fr;
     gap: 25px;
     margin-top: 2rem;
  }
 
- .reseñas-item {
+ .reseña-item {
     background-color: #E6E6FA;
     padding: 1.5rem;
     border-radius: 10px;
@@ -250,12 +256,12 @@ cta.cta-button:active {
     text-align: left;
  }
 
- .reseñas-item p {
+ .reseña-item p {
     font-style: italic;
     margin-bottom: 0.7rem;
  }
 
- .reseñas-item footer {
+ .reseña-item footer {
     font-weight: 700;
     color: #483D8B;
     font-size: 0.9rem;
@@ -296,7 +302,7 @@ cta.cta-button:active {
     margin-top: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 6px;
-    font-family: 'monstserrat', sans-serif;
+    font-family: 'montserrat', sans-serif;
 }
 
 .contact-form button {
@@ -335,6 +341,9 @@ cta.cta-button:active {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
+    .multimedia-img {
+        height: 300px; /* Aumentamos la altura en desktop */
+    }
     .hero-banner {
         max-height: 350px; /*limitamos la altura maxima del contenedor del banner */
         overflow: hidden; /* Ocultar cualquier desbordamiento */
@@ -369,7 +378,7 @@ footer {
     .main-nav {
         display: none; /* Ocultar el menú por defecto */
         position: absolute;
-        top: 70px; /* Debajo del header */
+        top: 90px; /* Debajo del header */
         right: 5%;
         background-color: #6a5acd;
         border-radius: 8px;
