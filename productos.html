@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Reseñas | Osky Diseños </title>
-    <link rel="stylesheet" href="css\styles.css">
+    <title>Servicios | Osky Diseños</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="main-header">
         <div class="logo">
             <a href="index.html">
@@ -16,66 +17,64 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li> 
-                <li><a href="productos.html">Servicios</a></li>
-                <li><a href="resenas.html" class="active">Reseñas</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Servicios</a></li> <li><a href="resenas.html">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button>
     </header>
-    
+    <main class="page-content">
+        <section class="page-header">
+            <h2>Mis Servicios y Productos</h2>
+            <p class="subtitle">Diseño digital y gráfico hecho a medida para tus objetivos.</p>
+        </section>
 
-<main class="page-content">
-    <section class="page-header"> 
-        <h2> Mis Servicios y Productos </h2>
-        <p class="subtitle"> Diseño digital y gráfico hecho a medida para tus objetivos. Descubre cómo puedo ayudarte a llevar tu presencia en línea al siguiente nivel con mis servicios de diseño web y gráfico. Desde sitios web personalizados hasta identidades de marca completas, estoy aquí para transformar tus ideas en realidad.</p>
-    </section>
-
-    <section id="productos">
-        <div class="productos-container">
-            <div class="card-product">
-                <h4> Diseño Web Profesional</h4>
-                <p> Desarrollo de sitios web modernos, optimizados y adaptables a todos los dispositivos</p>
-                <ul class="features">
-                    <li> Webs Cooporativas </li>
-                    <li> Landing Pages</li>
-                    <li> E_commerce (Base)</li>
-                </ul>
+        <section id="productos">
+            <div class="productos-container">
+                <div class="card-product">
+                    <h4>Diseño Web Profesional</h4>
+                    <p>Desarrollo de sitios web modernos, optimizados y adaptables a todos los dispositivos.</p>
+                    <ul class="features">
+                        <li>Webs Corporativas</li>
+                        <li>Landing Pages</li>
+                        <li>E-commerce (Base)</li>
+                    </ul>
+                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                </div>
+                <div class="card-product">
+                    <h4>Branding e Identidad</h4>
+                    <p>Creación de una identidad visual sólida, desde logotipos hasta manuales de marca.</p>
+                    <ul class="features">
+                        <li>Logotipo Principal</li>
+                        <li>Paleta de Colores</li>
+                        <li>Guía de Marca</li>
+                    </ul>
+                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                </div>
+                <div class="card-product">
+                    <h4>Folletería y Flyers</h4>
+                    <p>Diseño de materiales impresos que comunican con impacto y profesionalismo.</p>
+                    <ul class="features">
+                        <li>Diseño de Flyers</li>
+                        <li>Catálogos Digitales</li>
+                        <li>Tarjetas de Presentación</li>
+                    </ul>
+                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                </div>
             </div>
-            <a href="contacto.html" class="cta-small"> ¡Cotizar! </a>
-        </div>
-        <div class="card-product">
-            <h4> Branding e identidad</h4>
-            <p> Creación de identidades visuales que reflejan la esencia de tu marca y conectan con tu audiencia</p>
-            <ul class="features">  
-                <li> Logotipo Principal</li>
-                <li> Paleta de colores </li>
-                <li> Guia de Marca </li>
-            </ul>
-            <a href="contacto.html" class="cta-small"> ¡Cotizar! </a>
-        </div>
-        <div class="card-product">
-            <h4> Folletería y Flyers</h4>
-            <p> Diseño de materiales promocionales y publicitarios para fortalecer la presencia de tu marca</p>
-            <ul class="features">
-                <li> Flyers y Posters </li>
-                <li> Banners para redes sociales </li>
-                <li> Tarjetas de Presentación </li>
-            </ul>
-            <a href="contacto.html" class="cta-small"> ¡Cotizar! </a>
-        </div>
-    </section>  
+        </section>
+    </main>
+    
     <footer>
-        <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico </p>
+        <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico</p>
     </footer>
     <script>
         const nav = document.querySelector('.main-nav');
         const toggle = document.querySelector('.menu-toggle');
         toggle.addEventListener('click', () => {
-            nav.classList.toggle('nav-open');
+            nav.classList.toggle('open');
         });
     </script>
-</main>
 </body>
 </html>
