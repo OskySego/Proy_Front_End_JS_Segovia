@@ -1,31 +1,66 @@
-<main class="page-content">
-    <section class="page-header"> 
-        <h2> Experiencias de Mis Clientes </h2>
-        <p class="subtitle"> La prueba de calidad y el compromiso de Osky Diseños. </p>
-    </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas | Osky Diseños</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <section id="reseñas">
-        <div class="reseñas-grid-page">
-            <blockquote class="reseñas-item">
-                <p> "La atención al detalle y la velocidad de respuesta fueron inigualables. ¡Recm¿omenadado 100%!</p>
-                <footer> - Ana M. | Proyecto Web </footer>
-            </blockquote>
-            <blockquote class="reseñas-item">
-                <p> "Mi nuevo logo y Folletería capturaron la escencia de mi marca a la perfeción. ¡Increíble trabajo!"</p>
-                <footer> - Carlos R. | Branding </footer>
-            </blockquote>
-            <blockquote class="reseñas-item">
-                <p> "El sitio web no solo es hermoso, sino que también es muy funcional y fácil de navegar. ¡Estoy encantada!"</p>
-                <footer> - Lucia T. | E-commerce </footer>
-            </blockquote>
-            <blockquote class="reseñas-item">
-                <p> "Osky Diseños superó mis expectativas en cada paso del proceso. ¡Altamente recomendable!"</p>
-                <footer> - Javier S. | Diseño Gráfico </footer>
-            </blockquote>
-            <blockquote class="reseñas-item">
-                <p> "Profesionalismo y creatividad en su máxima expresión. Mi marca nunca se vio mejor."</p>
-                <footer> - Marta L. | Identidad de Marca </footer>
-            </blockquote>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/Logo for Osky Diseños.svg" alt="Osky Diseños Logo" class="header-logo">
+            </a>
         </div>
-    </section>
-</main>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Servicios</a></li>
+                <li><a href="resenas.html" class="active">Reseñas</a></li> <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button>
+    </header>
+    <main class="page-content">
+        <section class="page-header">
+            <h2>Experiencias de Mis Clientes</h2>
+            <p class="subtitle">La prueba de la calidad y el compromiso de Osky Diseños.</p>
+        </section>
+
+        <section id="reseñas">
+            <div class="reseñas-grid-page">
+                <blockquote class="reseña-item">
+                    <p>"La atención al detalle y la velocidad de respuesta fueron inigualables. ¡Recomendado 100%!"</p>
+                    <footer>— Ana M. | Proyecto Web</footer>
+                </blockquote>
+                <blockquote class="reseña-item">
+                    <p>"Mi nuevo logo y folletería capturaron la esencia de mi marca a la perfección. Gran visión creativa."</p>
+                    <footer>— Juan P. | Branding</footer>
+                </blockquote>
+                <blockquote class="reseña-item">
+                    <p>"El diseño web superó mis expectativas. Es elegante y funciona de maravilla en mi celular."</p>
+                    <footer>— Laura F. | E-commerce</footer>
+                </blockquote>
+                <blockquote class="reseña-item">
+                    <p>"Profesionalismo y calidad en todo el proceso. Estoy muy satisfecho con el resultado final."</p>
+                    <footer>— Marcos L. | Folletería</footer>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico</p>
+    </footer>
+    <script>
+        const nav = document.querySelector('.main-nav');
+        const toggle = document.querySelector('.menu-toggle');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
