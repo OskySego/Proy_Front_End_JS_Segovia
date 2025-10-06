@@ -367,12 +367,13 @@ main {
         padding-bottom: 4rem;
     }
     .multimedia-img {
-        height: 300px; /* altura ajustada para desktop */
+        height: 350px; /* altura ajustada para desktop */
     }
     .hero-banner {
+        flex: 1;
         /* Para que la imagen quede dentro de los margenes del main */
         padding: 0;
-        max-height: 3500px;
+        max-height: 380px;
         overflow: hidden;
         border-radius: 10px;
         /* Forzamos el margen derecho en escritorio para separar del texto */
@@ -381,7 +382,7 @@ main {
     .hero-content {
         padding-left: 5%;
         flex: 1;
-        padding-right: 30px; /* Espacio entre texto e imagen */
+        padding-right: 0; /* Espacio entre texto e imagen */
     }
     /* Summary Section padding en desktop */
     .summary-section {
