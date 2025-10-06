@@ -1,9 +1,9 @@
 /* Paleta de Colores Violeta
- -Violeta Intenso (Principal): #6A5ACD (Slate Blue)
- -Violeta Pastel (Secundario/Fondo): #E6E6FA (Lavender)
- -Violeta Oscuro (Texto/Detalles): #483D8B (Dark Slate Blue)
- -Accent (Brillo): #D8BFD8 (Thistle)
- -Fondo Base: #FFFFFF (white)
+-Violeta Intenso (Principal): #6A5ACD (Slate Blue)
+-Violeta Pastel (Secundario/Fondo): #E6E6FA (Lavender)
+-Violeta Oscuro (Texto/Detalles): #483D8B (Dark Slate Blue)
+-Accent (Brillo): #D8BFD8 (Thistle)
+-Fondo Base: #FFFFFF (white)
 */
 
 /* --- Base y Tipografía --- */
@@ -14,7 +14,6 @@
 }
 
 body {
-    /*fuente corregida*/
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: #fff;
@@ -36,12 +35,11 @@ h1, h2, h3 {
 }
 main {
     flex-grow: 1;
-    /* quitamos el padding para que el contenido ocupe todo el ancho */
     padding: 0;
     background-color: #e6e6fa;
 }
 
-/* --- 1. Header --- */
+/* --- 1. Header (Se mantiene) --- */
 .main-header {
     background-color: #6A5ACD;
     padding: 1rem 5%;
@@ -56,8 +54,8 @@ main {
 
 .header-logo {
    height: 90px;
-    width: auto;
-    display: block;
+   width: auto;
+   display: block;
 }
 
 .menu-toggle {
@@ -84,41 +82,37 @@ main {
     transition: background-color 0.3s;
 }
 
-/* estilo para el hover y la pagina activa */
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
     background-color: #483D8B;
 }
 
-/* --- 2. HERO (Pagina de Inicio) - Diseño Mejrorado --- */
+/* --- 2. HERO (Se mantiene) --- */
 .hero-page-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    /* padding superior e inferior para altura */
     padding: 3.5rem 0 3.5rem 0;
     text-align: center;
     background: linear-gradient(135deg, #e6e6fa 0%, #fff 100%);
-    /* border de separación */
     border-bottom: 5px solid #d8bfd8;
 }
 
-/* aplicamos el padding lateral al contenido del texto */
 .hero-content {
     padding: 0 5%;
 }
 
 .hero-banner {
     flex: 1 1 100%;
-    padding: 0 5%; /* padding lateral para que la imagen no toque el borde del viewport en movil */
+    padding: 0 5%;
 }
 
 .multimedia-img {
     max-width: 100%;
-    height: 250px; /* altura ajustada para movil */
+    height: 250px;
     object-fit: cover;
     display: block;
-    margin: 1rem auto; /* centrado horizontal */
+    margin: 1rem auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -141,15 +135,15 @@ main {
     box-shadow: 0 2px #483D8B;
 }
 
-/* --- 3. Sección de Resumen (Tarjetas) -Nueva Sección --- */
+/* --- 3. Sección de Resumen (Se mantiene) --- */
 .summary-section {
-    background-color: #fff; /* Fondo blanco para contraste */
-    padding: 4rem 5%; /* Aplicamos padding al contenedor principal */
+    background-color: #fff;
+    padding: 4rem 5%;
     text-align: center;
 }
 
 .summary-cards {
-    padding: 0; /* Eliminamos el padding interno, ya esta en .summary-section */
+    padding: 0;
     text-align: center;
 }
 
@@ -162,7 +156,7 @@ main {
 }
 
 .summary-card {
-    flex: 1 1 250px; /* Flex para que las tarjetas sean responsivas */
+    flex: 1 1 250px;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -173,7 +167,6 @@ main {
     transform: translateY(-8px);
 }
 
-/* Fondo Intenso con Texto Blando */
 .violet-bg {
     background-color: #6A5ACD;
     color: white;
@@ -183,38 +176,42 @@ main {
     color: white;
 }
 
-/* Fondo Pastel con texto Normal */
 .light-bg {
     background-color: #E6E6FA;
     color: #333;
 }
 
-/* --- 4. Estilos Comunes de páginas secundarias --- */
+/* --- 4. Estilos Comunes de páginas secundarias (Optimizado) --- */
 .page-content section {
-    /* Aplicamos padding lateral y vertical a las secciones en las páginas secundarias */
-    padding: 3rem 5%;
+    /* Quitamos el padding global para que cada sección lo maneje */
+    padding: 0; 
     text-align: center;
     border-bottom: none;
 }
 
 .page-header {
+    /* Aquí definimos el padding para el encabezado de la página */
+    padding: 3rem 5% 2rem; 
     text-align: center;
-    padding-bottom: 2rem;
     border-bottom: none;
 }
 
-/* --- 5. Seccion Productos (Flexbox avanzado) --- */
+/* --- 5. Seccion Productos (Flexbox y Responsive Corregidos) --- */
 .productos-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permitimos que las tarjetas salten de línea */
     gap: 20px;
+    padding: 0 20px; /* Padding solo lateral */
     justify-content: center;
-    margin-top: 3rem;
+    max-width: 1200px; /* Ancho máximo para el diseño de escritorio */
+    margin: 40px auto; /* Centrado y margen superior/inferior */
 }
 
 .card-product {
-    flex: 1 1 300px; /* Flex para que las tarjetas sean responsivas */
-    max-width: 300px;
+    flex: 1 1 300px; /* Ancho base de 300px */
+    max-width: 350px;
+    min-width: 280px;
+    width: 100%; /* Asegura que ocupe todo el ancho en móvil */
     background-color: #fff;
     border: 1px solid #d8bfd8;
     padding: 2rem;
@@ -232,7 +229,15 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Selector corregido */
+.card-product .product-img {
+    width: 100%;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    border-radius: 8px;
+}
+
 .features {
     list-style: none;
     margin: 1rem 0;
@@ -263,7 +268,7 @@ main {
     color: white;
 }
 
-/* --- 6. Sección reseñas (Grid estetico) --- */
+/* --- 6. Sección reseñas (Se mantiene) --- */
 .reseñas-grid-page {
     display: grid;
     grid-template-columns: 1fr;
@@ -291,14 +296,13 @@ main {
     font-size: 0.9rem;
 }
 
-/* Grid para pantallas grandes */
 @media (min-width: 768px) {
     .reseñas-grid-page {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* --- 7. Sección Contacto (Media Queries) --- */
+/* --- 7. Sección Contacto (Se mantiene) --- */
 .contact-section-page {
     padding: 3rem 5% 6rem 5%;
 }
@@ -349,16 +353,14 @@ main {
     background-color: #483D8B;
 }
 
-/* --- 8. Media Queries Globales y Desktop (Diseño Novedoso) --- */
+/* --- 8. Media Queries Globales y Desktop (Se mantiene) --- */
 @media (min-width: 768px) {
-    /* header */
     .menu-toggle {
         display: none;
     }
     .main-nav {
         display: block;
     }
-    /* Hero */
     .hero-page-section {
         flex-direction: row;
         text-align: left;
@@ -367,38 +369,34 @@ main {
         padding-bottom: 4rem;
     }
     .multimedia-img {
-        height: 350px; /* altura ajustada para desktop */
+        height: 350px;
     }
     .hero-banner {
         flex: 1;
-        /* Para que la imagen quede dentro de los margenes del main */
         padding: 0;
         max-height: 380px;
         overflow: hidden;
         border-radius: 10px;
-        /* Forzamos el margen derecho en escritorio para separar del texto */
         margin-left: 20px;
     }
     .hero-content {
         padding-left: 5%;
         flex: 1;
-        padding-right: 0; /* Espacio entre texto e imagen */
+        padding-right: 0;
     }
-    /* Summary Section padding en desktop */
     .summary-section {
         padding: 4rem 5%;
     }
     .page-content section {
         padding: 3rem 5%;
     }
-    /* Contacto: Boton a la derecha */
     .contact-form button {
         width: auto;
         float: right;
     }
 }
 
-/* --- 9. Footer (Diseño Simple y Efectivo) --- */
+/* --- 9. Footer (Se mantiene) --- */
 footer {
     background-color: #E6E6FA;
     color: #483D8B;
@@ -408,7 +406,7 @@ footer {
     margin-top: auto;
 }
 
-/* --- 10. Media Query para pantallas muy pequeñas --- */
+/* --- 10. Media Query para pantallas muy pequeñas (Se mantiene) --- */
 @media (max-width: 767px) {
     .menu-toggle {
         display: block;
@@ -442,86 +440,53 @@ footer {
     }
 }
 
-/* 11. Estilos para el Lightbox (Puro CSS) */
-
-/* Estilo para imagen miniatura de las tarjetas de productos */
-.product-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.product-img:hover {
-    transform: scale(1.02);
-}
-
-/*--------------------------------------------------------------*/
-/* LIHGTBOX PURE CSS */
-/*--------------------------------------------------------------*/
-
-.lightbox {
-    /* Oculto por defecto */
-    display: none;
-    /* Propiedades para la pantalla completa */
+/* --- 11. Estilos para el Modal FUNCIONAL (Controlado por JS) --- */
+.modal {
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* fondo nergo con opacidad */
-    z-index: 9999; /* Asegura que esté por encima de otros elementos */
-    padding: 20px;
-    box-sizing: border-box;
-    /* Centrado del contenido */
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
     justify-content: center;
     align-items: center;
 }
 
-/* El poder de :target: Cuando el ID del Lightbox se actica en la url (#lightbox-web) se muestra */
-.lightbox:target {
-    display: flex;
+.modal.show {
+    display: flex; /* Activado por JavaScript */
 }
 
-/* Imagen dentro del Lightbox */
-.lightbox img {
-    /* limites para que no se salga de la pantalla*/
+.modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
     max-width: 90%;
-    max-height: 80%;
-    width: auto;
-    height: auto;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
     object-fit: contain;
-    border: 5px solid #fff;
+    border: 5px solid white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Botón de cierre */
-.close-lightbox {
+.close-button {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 2rem;
+    top: -30px; 
+    right: -30px;
+    color: white;
+    font-size: 3rem;
     font-weight: bold;
-    text-decoration: none;
+    cursor: pointer;
     line-height: 1;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
-.close-lightbox:hover {
-    opacity: 1;
-}
-
-/* Media Query para ajustar el Lightbox en pantallas pequeñas */
-@media (max-width: 767px) {
-    .lightbox img {
-        max-width: 95%;
-        max-height: 85%;
-    }
+.close-button:hover {
+    color: #d8bfd8;
 }
