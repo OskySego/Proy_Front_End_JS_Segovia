@@ -1,46 +1,49 @@
-/* Paleta de Colores violeta
- -Violeta Intenso(Principal): #6a5acd (slate blue)
- -Violeta Pastel (Secundario/fondo): #E6E6FA (lavender)
- -Violeta Oscuro (Texto/Detalles): #483D8B (dark slate blue)
- -Accent (Brillo): #D8BFD8 (thistle)
- -Fondo Base: #FFFFFF (white)
+/* Paleta de Colores Violeta
+ -Violeta Intenso (Principal): #6A5ACD (Slate Blue)
+ -Violeta Pastel (Secundario/Fondo): #E6E6FA (Lavender)
+ -Violeta Oscuro (Texto/Detalles): #483D8B (Dark Slate Blue)
+ -Accent (Brillo): #D8BFD8 (Thistle)
+ -Fondo Base: #FFFFFF (white)
 */
+
 /* --- Base y Tipografía --- */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    /*fuente corregida*/
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #FFFFFF;
-    color: #333333; 
-    min-height: 100vh; /* Para asegurar que el footer esté en páginas cortas */
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: #483D8B; /* Violeta Oscuro para títulos principales*/
+    color: #483D8B;
     margin-bottom: 0.5rem;
 }
 .subtitle {
     font-size: 1.1rem;
-    color: #6a5acd; /* Violeta Intenso para subtítulos */
+    color: #6A5ACD;
     margin-bottom: 2rem;
 }
 main {
-    flex: 1; /* Para que el main tome todo el espacio disponible */
-    padding: 0.5%;
-    background-color: #E6E6FA; /* Violeta Pastel para el fondo del main */
+    flex-grow: 1;
+    /* quitamos el padding para que el contenido ocupe todo el ancho */
+    padding: 0;
+    background-color: #e6e6fa;
 }
 
-/* --- 1.Header (Diseño novedoso y Responsivo) ---*/ 
+/* --- 1. Header --- */
 .main-header {
-    background-color: #6a5acd; /* Violeta Intenso */
+    background-color: #6A5ACD;
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -52,14 +55,13 @@ main {
 }
 
 .header-logo {
-    height: 65px; /* tamaño del logo */
+   height: 65px;
     width: auto;
     display: block;
 }
 
-/* Botón de menú para pantallas pequeñas */
 .menu-toggle {
-    display: none; /* Oculto por defecto en desktop */
+    display: none;
     background: none;
     border: none;
     color: white;
@@ -71,55 +73,67 @@ main {
     list-style: none;
     display: flex;
 }
+
 .main-nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0 5rem 1rem;
     display: block;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-.main-nav ul li a:hover 
-.main-nav ul li a.active{
-    background-color: #483D8B; /* Violeta Oscuro al pasar el mouse/activo */
+    transition: background-color 0.3s;
 }
 
-/* --- 2. Sección HERO (Página de inicio) --- */
+/* estilo para el hover y la pagina activa */
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: #483D8B;
+}
+
+/* --- 2. HERO (Pagina de Inicio) - Diseño Mejrorado --- */
 .hero-page-section {
     display: flex;
-    flex-direction: column; /* aplicado en movil*/
-    gap: 30px; /* Reduccion clave: Achicar el padding superior e inferior de la sección */
-    padding: 2.5rem 0 3rem 0;
+    flex-direction: column;
+    gap: 30px;
+    /* padding superior e inferior para altura */
+    padding: 3.5rem 0 3.5rem 0;
     text-align: center;
-    background: linear-gradient(135deg, #E6E6FA 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #e6e6fa 0%, #fff 100%);
+    /* border de separación */
+    border-bottom: 5px solid #d8bfd8;
+}
+
+/* aplicamos el padding lateral al contenido del texto */
+.hero-content {
+    padding: 0 5%;
 }
 
 .hero-banner {
-  flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 0 5%; /* padding lateral para que la imagen no toque el borde del viewport en movil */
 }
 
-.multimedia-img {
+.multimedia.img {
     max-width: 100%;
-    height: 250px;
+    height: 250px; /* altura ajustada para movil */
     object-fit: cover;
     display: block;
-    margin: 1rem auto 0;
+    margin: 1rem auto; /* centrado horizontal */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #6a5acd; /* Violeta Intenso */
+    background-color: #6A5ACD;
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
-    box-shadow: 0 4px #483D8B; /* Efecto 3d */
-    transition: all 0.2s ease;
+    box-shadow: 0 4px #483D8B;
+    transition: all 0.3s ease;
 }
 
 .cta-button:active {
@@ -127,13 +141,19 @@ main {
     box-shadow: 0 2px #483D8B;
 }
 
-/* --- 3. Tarjetas de resumen (Flexbox Simple) --- */
-.summary-cards{
-    padding: 4rem 0;
+/* --- 3. Sección de Resumen (Tarjetas) -Nueva Sección --- */
+.summary-section {
+    background-color: #fff; /* Fondo blanco para contraste */
+    padding: 4rem 5%; /* Aplicamos padding al contenedor principal */
     text-align: center;
 }
 
-.card-grid-small{ 
+.summary-cards {
+    padding: 0; /* Eliminamos el padding interno, ya esta en .summary-section */
+    text-align: center;
+}
+
+.cards-grid-small {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -142,7 +162,7 @@ main {
 }
 
 .summary-card {
-    flex: 1 1 250; /* trajetas flexibles */
+    flex: 1 1 250px; /* Flex para que las tarjetas sean responsivas */
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -153,8 +173,9 @@ main {
     transform: translateY(-8px);
 }
 
+/* Fondo Intenso con Texto Blando */
 .violet-bg {
-    background-color: #6a5acd;
+    background-color: #6A5ACD;
     color: white;
 }
 
@@ -162,66 +183,70 @@ main {
     color: white;
 }
 
+/* Fondo Pastel con texto Normal */
 .light-bg {
     background-color: #E6E6FA;
-    color: #333333;
+    color: #333;
 }
 
-/* --- 4. Estilos Comunes de paginas secundarias --- */
+/* --- 4. Estilos Comunes de páginas secundarias --- */
 .page-content section {
-    padding: 3rem 0;
+    /* Aplicamos padding lateral y vertical a las secciones en las páginas secundarias */
+    padding: 3rem 5%;
     text-align: center;
-    border-bottom: none; /* eliminar el borde general para un diseño más limpio */
+    border-bottom: none;
 }
 
-.page-header{
+.page-header {
     text-align: center;
     padding-bottom: 2rem;
-    border-bottom: 2px solid #d8bfd8;
+    border-bottom: none;
 }
- /* --- 5. Sección Productos (Flexbox Avanzado) --- */
- .productos-container { 
+
+/* --- 5. Seccion Productos (Flexbox avanzado) --- */
+.productos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 3rem;
- }
+}
 
- .card-product {
-    flex: 1 1 300px; /* tarjetas flexibles */
-    max-width: 380px;
-    background-color: #FFFFFF;
+.card-product {
+    flex: 1 1 300px; /* Flex para que las tarjetas sean responsivas */
+    max-width: 300px;
+    background-color: #fff;
     border: 1px solid #d8bfd8;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
- }
+}
 
- .card-product h4 {
-    color: #6a5acd;
-    font-family: 'playfair display', serif;
+.card-product h4 {
+    color: #6A5ACD;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     border-bottom: 2px solid #E6E6FA;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
- }
+}
 
- .features {
+/* Selector corregido */
+.features {
     list-style: none;
     margin: 1rem 0;
     padding: 0;
- }
+}
 
- .features li {
+.features li {
     padding: 0.3rem 0;
-    border-bottom: 1px solid #E6E6FA;
+    border-bottom: 1px dotted #E6E6FA;
     color: #483D8B;
     font-size: 0.95rem;
- }
+}
 
- .cta-small {
+.cta-small {
     display: inline-block;
     background-color: #d8bfd8;
     color: #483D8B;
@@ -230,54 +255,54 @@ main {
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
-    box-shadow: 0 4px #483D8B; /* Efecto 3d */
-    transition: all 0.2s ease;
- }
+    transition: all 0.3s ease;
+}
 
- .cta-small:hover{
-    background-color: #6a5acd;
+.cta-small:hover {
+    background-color: #6A5ACD;
     color: white;
- }
+}
 
- /* --- 6. Sección Reseñas (Grid Estético) --- */
- .reseña-grid-page {
-    display: grid; /* movil: 1 columna */
+/* --- 6. Sección reseñas (Grid estetico) --- */
+.reseñas-grid-page {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
     margin-top: 2rem;
- }
+}
 
- .reseña-item {
-    background-color: #E6E6FA;
+.reseña-item {
+    background-color: #fff;
     padding: 1.5rem;
     border-radius: 10px;
-    border-left: 5px solid #6a5acd;
+    border-left: 5px solid #6A5ACD;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     text-align: left;
- }
+}
 
- .reseña-item p {
+.reseña-item p {
     font-style: italic;
     margin-bottom: 0.7rem;
- }
+}
 
- .reseña-item footer {
+.reseña-item footer {
     font-weight: 700;
     color: #483D8B;
     font-size: 0.9rem;
- }
-
- /* Grid para desktop/tablet */
-    @media (min-width: 768px) {
-        .reseñas-grid-page {
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
-        }
-    }
-
-/* --- 7. Sección contacto (Media Queries) --- */
-.contact-section-page {
-    padding: 3rem 0 6rem 0;
 }
+
+/* Grid para pantallas grandes */
+@media (min-width: 768px) {
+    .reseñas-grid-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- 7. Sección Contacto (Media Queries) --- */
+.contact-section-page {
+    padding: 3rem 5% 6rem 5%;
+}
+
 .contact-form {
     max-width: 550px;
     margin: 0 auto;
@@ -288,9 +313,9 @@ main {
     text-align: left;
 }
 
-.contact-form label {
+contact-form label {
     display: block;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-weight: 700;
     color: #483D8B;
 }
@@ -301,12 +326,13 @@ main {
     padding: 0.8rem;
     margin-top: 0.5rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: 'montserrat', sans-serif;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form button {
-    background-color: #6a5acd;
+    display: inline-block;
+    background-color: #6A5ACD;
     color: white;
     border: none;
     padding: 0.8rem 2rem;
@@ -316,7 +342,7 @@ main {
     transition: background-color 0.3s ease;
     font-weight: 700;
     text-transform: uppercase;
-    width: 100%; /* Botón de ancho completo en móvil */
+    width: 100%;
 }
 
 .contact-form button:hover {
@@ -325,39 +351,50 @@ main {
 
 /* --- 8. Media Queries Globales y Desktop (Diseño Novedoso) --- */
 @media (min-width: 768px) {
-    /* Header */
+    /* header */
     .menu-toggle {
-        display: none; /* Oculto en tablet y desktop */
+        display: none;
     }
     .main-nav {
         display: block;
     }
-
-    /* Diseño HERO: Colocar el texto al lado del banner */
+    /* Hero */
     .hero-page-section {
-        flex-direction: row; 
+        flex-direction: row;
         text-align: left;
         align-items: center;
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
-    .multimedia-img {
-        height: 300px; /* Aumentamos la altura en desktop */
+    .multimedia.img {
+        height: 350px; /* altura ajustada para desktop */
     }
     .hero-banner {
-        max-height: 350px; /*limitamos la altura maxima del contenedor del banner */
-        overflow: hidden; /* Ocultar cualquier desbordamiento */
+        /* Para que la imagen quede dentro de los margenes del main */
+        padding: 0;
+        max-height: 350px;
+        overflow: hidden;
         border-radius: 10px;
+        /* Forzamos el margen derecho en escritorio para separar del texto */
+        margin-left: 20px;
     }
     .hero-content {
+        padding-left: 5%;
         flex: 1;
-        padding-right: 30px;
+        padding-right: 30px; /* Espacio entre texto e imagen */
     }
-   /* Contacto: Botón a la derecha */
-   .contact-form button {
+    /* Summary Section padding en desktop */
+    .summary-section {
+        padding: 4rem 5%;
+    }
+    .page-content section {
+        padding: 3rem 5%;
+    }
+    /* Contacto: Boton a la derecha */
+    .contact-form button {
         width: auto;
         float: right;
-   }
+    }
 }
 
 /* --- 9. Footer (Diseño Simple y Efectivo) --- */
@@ -365,28 +402,27 @@ footer {
     background-color: #E6E6FA;
     color: #483D8B;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 5%;
     font-size: 0.9rem;
-    margin-top: auto; /* Empuja al footer hacia abajo */
+    margin-top: auto;
 }
 
-/* --- 10. Menú Hamburguesa (Para pantallas pequeñas) --- */
+/* --- 10. Media Query para pantallas muy pequeñas --- */
 @media (max-width: 767px) {
     .menu-toggle {
-        display: block; /* Mostrar el botón de menú en móvil */
+        display: block;
     }
     .main-nav {
-        display: none; /* Ocultar el menú por defecto */
+        display: none;
         position: absolute;
-        top: 90px; /* Debajo del header */
+        top: 90px;
         right: 5%;
-        background-color: #6a5acd;
+        background-color: #6A5ACD;
         border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         width: 200px;
     }
-    .main-nav.open {
-        /* Estado abierto del menú */
+    .main-nav.page {
         display: block;
     }
     .main-nav ul {
@@ -400,10 +436,7 @@ footer {
         padding: 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .main-nav ul li:last-child a {
+    .main-nav ul li a:last-child {
         border-bottom: none;
-    }
-    .main-nav.active {
-        display: block; /* Mostrar el menú cuando esté activo */
     }
 }
