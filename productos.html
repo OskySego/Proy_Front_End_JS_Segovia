@@ -25,46 +25,74 @@
         <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button>
     </header>
     <main class="page-content">
-        <section class="page-header">
-            <h2>Mis Servicios y Productos</h2>
-            <p class="subtitle">Diseño digital y gráfico hecho a medida para tus objetivos.</p>
-        </section>
+    <section class="page-header">
+        <h2>Mis Servicios y Productos</h2>
+        <p class="subtitle">Diseño digital y gráfico hecho a medida para tus objetivos.</p>
+    </section>
 
-        <section id="productos">
-            <div class="productos-container">
-                <div class="card-product">
-                    <h4>Diseño Web Profesional</h4>
-                    <p>Desarrollo de sitios web modernos, optimizados y adaptables a todos los dispositivos.</p>
-                    <ul class="features">
-                        <li>Webs Corporativas</li>
-                        <li>Landing Pages</li>
-                        <li>E-commerce (Base)</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
-                </div>
-                <div class="card-product">
-                    <h4>Branding e Identidad</h4>
-                    <p>Creación de una identidad visual sólida, desde logotipos hasta manuales de marca.</p>
-                    <ul class="features">
-                        <li>Logotipo Principal</li>
-                        <li>Paleta de Colores</li>
-                        <li>Guía de Marca</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
-                </div>
-                <div class="card-product">
-                    <h4>Folletería y Flyers</h4>
-                    <p>Diseño de materiales impresos que comunican con impacto y profesionalismo.</p>
-                    <ul class="features">
-                        <li>Diseño de Flyers</li>
-                        <li>Catálogos Digitales</li>
-                        <li>Tarjetas de Presentación</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
-                </div>
+    <section id="productos">
+        <div class="productos-container">
+            
+            <div class="card-product">
+                <a href="#lightbox-web" class="product-image-link">
+                    <img src="./img/web_design.jpg" alt="Muestra de Diseño Web" class="product-img">
+                </a>
+                <h4>Diseño Web Profesional</h4>
+                <p>Desarrollo de sitios web modernos, optimizados y adaptables a todos los dispositivos.</p>
+                <ul class="features">
+                    <li>Webs Corporativas</li>
+                    <li>Landing Pages</li>
+                    <li>E-commerce (Base)</li>
+                </ul>
+                <a href="contacto.html" class="cta-small">¡Cotizar!</a>
             </div>
-        </section>
-    </main>
+
+            <div class="card-product">
+                <a href="#lightbox-branding" class="product-image-link">
+                    <img src="./img/branding.jpg" alt="Muestra de Branding y Logotipo" class="product-img">
+                </a>
+                <h4>Branding e Identidad</h4>
+                <p>Creación de una identidad visual sólida, desde logotipos hasta manuales de marca.</p>
+                <ul class="features">
+                    <li>Logotipo Principal</li>
+                    <li>Paleta de Colores</li>
+                    <li>Guía de Marca</li>
+                </ul>
+                <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+            </div>
+
+            <div class="card-product">
+                <a href="#lightbox-flyers" class="product-image-link">
+                    <img src="./img/flyers.jpg" alt="Muestra de Folletería y Flyers" class="product-img">
+                </a>
+                <h4>Folletería y Flyers</h4>
+                <p>Diseño de materiales impresos que comunican con impacto y profesionalismo.</p>
+                <ul class="features">
+                    <li>Diseño de Flyers</li>
+                    <li>Catálogos Digitales</li>
+                    <li>Tarjetas de Presentación</li>
+                </ul>
+                <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<div id="lightbox-web" class="lightbox">
+    <a href="#productos" class="close-lightbox" title="Cerrar">X</a>
+    <img src="./img/web_design.jpg" alt="Muestra de Diseño Web en pantalla completa">
+</div>
+
+<div id="lightbox-branding" class="lightbox">
+    <a href="#productos" class="close-lightbox" title="Cerrar">X</a>
+    <img src="./img/branding.jpg" alt="Muestra de Branding en pantalla completa">
+</div>
+
+<div id="lightbox-flyers" class="lightbox">
+    <a href="#productos" class="close-lightbox" title="Cerrar">X</a>
+    <img src="./img/flyers.jpg" alt="Muestra de Folletería en pantalla completa">
+</div>
     
     <footer>
         <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico</p>

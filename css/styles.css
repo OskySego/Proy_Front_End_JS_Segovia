@@ -441,3 +441,87 @@ footer {
         border-bottom: none;
     }
 }
+
+/* 11. Estilos para el Lightbox (Puro CSS) */
+
+/* Estilo para imagen miniatura de las tarjetas de productos */
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.02);
+}
+
+/*--------------------------------------------------------------*/
+/* LIHGTBOX PURE CSS */
+/*--------------------------------------------------------------*/
+
+.lightbox {
+    /* Oculto por defecto */
+    display: none;
+    /* Propiedades para la pantalla completa */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* fondo nergo con opacidad */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Centrado del contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El poder de :target: Cuando el ID del Lightbox se actica en la url (#lightbox-web) se muestra */
+.lightbox:target {
+    display: flex;
+}
+
+/* Imagen dentro del Lightbox */
+.lightbox img {
+    /* limites para que no se salga de la pantalla*/
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón de cierre */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.close-lightbox:hover {
+    opacity: 1;
+}
+
+/* Media Query para ajustar el Lightbox en pantallas pequeñas */
+@media (max-width: 767px) {
+    .lightbox img {
+        max-width: 95%;
+        max-height: 85%;
+    }
+}
