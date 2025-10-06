@@ -94,9 +94,9 @@ main {
 .hero-page-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
     /* padding superior e inferior para altura */
-    padding: 2rem 0 2rem 0;
+    padding: 3.5rem 0 3.5rem 0;
     text-align: center;
     background: linear-gradient(135deg, #e6e6fa 0%, #fff 100%);
     /* border de separación */
@@ -114,11 +114,11 @@ main {
 }
 
 .multimedia-img {
-    max-width: 50%;
-    height: 180px; /* altura ajustada para movil */
+    max-width: 100%;
+    height: 250px; /* altura ajustada para movil */
     object-fit: cover;
     display: block;
-    margin: 0.5rem auto; /* centrado horizontal */
+    margin: 1rem auto; /* centrado horizontal */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -363,16 +363,16 @@ main {
         flex-direction: row;
         text-align: left;
         align-items: center;
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
     .multimedia-img {
-        height: 220px; /* altura ajustada para desktop */
+        height: 300px; /* altura ajustada para desktop */
     }
     .hero-banner {
         /* Para que la imagen quede dentro de los margenes del main */
         padding: 0;
-        max-height: 270px;
+        max-height: 3500px;
         overflow: hidden;
         border-radius: 10px;
         /* Forzamos el margen derecho en escritorio para separar del texto */
