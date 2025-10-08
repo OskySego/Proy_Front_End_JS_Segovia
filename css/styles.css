@@ -1,9 +1,8 @@
-/* Paleta de Colores Violeta
--Violeta Intenso (Principal): #6A5ACD (Slate Blue)
--Violeta Pastel (Secundario/Fondo): #E6E6FA (Lavender)
--Violeta Oscuro (Texto/Detalles): #483D8B (Dark Slate Blue)
--Accent (Brillo): #D8BFD8 (Thistle)
--Fondo Base: #FFFFFF (white)
+/* Paleta de Colores Modificada: Violeta (base) y Verde (Acento)
+-Violeta Intenso (Principal): #5FAB8B (Slate Blue más oscuro)
+-Violeta Pastel (Secundario/Fondo): #EDE7F6 (Un gris lavanda muy suave)
+-Verde Lima Brillante (Acento/CTA): #8BC34A (Lime Green)
+-Gris Claro (Texto Secundario/Fondo): #F5F5F5 (Light Gray)
 */
 
 /* --- Base y Tipografía --- */
@@ -16,7 +15,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #fff;
+    background-color: #EDE7F6; /* Fondo Base Lavanda Pastel */
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -25,23 +24,23 @@ body {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: #483D8B;
+    color: #5F4B8B; /* Violeta Intenso textos de titulos */
     margin-bottom: 0.5rem;
 }
 .subtitle {
     font-size: 1.1rem;
-    color: #6A5ACD;
+    color: #5F4B8B; /* sUBTITULOS EN VIOLETA OSCURO*/
     margin-bottom: 2rem;
 }
 main {
     flex-grow: 1;
     padding: 0;
-    background-color: #e6e6fa;
+    background-color: #fcfcfc; /* Fondo blanco para el contenido principal */
 }
 
 /* --- 1. Header (Se mantiene) --- */
 .main-header {
-    background-color: #6A5ACD;
+    background-color: #5F4B8B; /* Violeta Intenso */
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -94,8 +93,8 @@ main {
     gap: 30px;
     padding: 3.5rem 0 3.5rem 0;
     text-align: center;
-    background: linear-gradient(135deg, #e6e6fa 0%, #fff 100%);
-    border-bottom: 5px solid #d8bfd8;
+    background: linear-gradient(135deg, #ede7f6 0%, #fff 100%);
+    border-bottom: 5px solid #5F4B8B;
 }
 
 .hero-content {
@@ -119,14 +118,14 @@ main {
 
 .cta-button {
     display: inline-block;
-    background-color: #6A5ACD;
+    background-color: #8bc34a; /* Verde Lima Brillante */
     color: white;
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
-    box-shadow: 0 4px #483D8B;
+    box-shadow: 0 4px #689f38; /* Sombra más oscura */
     transition: all 0.3s ease;
 }
 
@@ -168,7 +167,7 @@ main {
 }
 
 .violet-bg {
-    background-color: #6A5ACD;
+    background-color: #5F4B8B; /* Violeta Intenso */
     color: white;
 }
 
@@ -177,7 +176,7 @@ main {
 }
 
 .light-bg {
-    background-color: #E6E6FA;
+    background-color: #EDE7F6; /* Lavanda Pastel */
     color: #333;
 }
 
@@ -213,7 +212,7 @@ main {
     min-width: 280px;
     width: 100%; /* Asegura que ocupe todo el ancho en móvil */
     background-color: #fff;
-    border: 1px solid #d8bfd8;
+    border: 1px solid #EDE7F6; /* Borde suave */
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -221,10 +220,10 @@ main {
 }
 
 .card-product h4 {
-    color: #6A5ACD;
+    color: #5F4B8B;
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    border-bottom: 2px solid #E6E6FA;
+    border-bottom: 2px solid #EDE7F6;  /* Línea decorativa */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -246,15 +245,15 @@ main {
 
 .features li {
     padding: 0.3rem 0;
-    border-bottom: 1px dotted #E6E6FA;
-    color: #483D8B;
+    border-bottom: 1px dotted #EDE7F6; /* Línea punteada suave */
+    color: #5F4B8B;
     font-size: 0.95rem;
 }
 
 .cta-small {
     display: inline-block;
-    background-color: #d8bfd8;
-    color: #483D8B;
+    background-color: #EDE7F6; /* Lavanda Pastel */
+    color: #5F4B8B; /* Violeta Intenso */
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
@@ -264,7 +263,7 @@ main {
 }
 
 .cta-small:hover {
-    background-color: #6A5ACD;
+    background-color: #8bc34a;  /* Verde Lima Brillante */
     color: white;
 }
 
@@ -336,7 +335,7 @@ main {
 
 .contact-form button {
     display: inline-block;
-    background-color: #6A5ACD;
+    background-color: #8bc34a; /* Verde Lima Brillante */
     color: white;
     border: none;
     padding: 0.8rem 2rem;
@@ -350,7 +349,7 @@ main {
 }
 
 .contact-form button:hover {
-    background-color: #483D8B;
+    background-color: #689f38; /* Verde Lima Más Oscuro */
 }
 
 /* --- 8. Media Queries Globales y Desktop (Se mantiene) --- */
@@ -398,8 +397,8 @@ main {
 
 /* --- 9. Footer (Se mantiene) --- */
 footer {
-    background-color: #E6E6FA;
-    color: #483D8B;
+    background-color: #EDE7F6;  /* Lavanda Pastel */
+    color: #5F4B8B; /* Violeta Intenso */
     text-align: center;
     padding: 1.5rem 5%;
     font-size: 0.9rem;
@@ -488,7 +487,7 @@ footer {
 }
 
 .close-button:hover {
-    color: #d8bfd8;
+    color: #8bc34a; /* Verde Lima Brillante al pasar el ratón */
 }
 
 /* --- TRUCO CSS PARA EVITAR AUTOCOMPLETADO VISUAL --- */
