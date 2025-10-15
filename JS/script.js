@@ -1,19 +1,19 @@
 // js/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Lógica del menú móvil (copiada de tu HTML)
+    // Lógica del menú móvil
     const nav = document.querySelector('.main-nav');
     const toggle = document.querySelector('.menu-toggle');
-    if (toggle && nav) { // Asegurarse de que existan
+    if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('open');
         });
     }
 
-    // Lógica del Modal de imágenes (copiada de tu HTML)
+    // Lógica del Modal de imágenes
     const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
-    const closeModalBtn = document.querySelector('.close-button');
+    // closeModalBtn no es necesario aquí, se usa el onclick en el HTML
 
     // Función para abrir el modal (llamada desde onclick en HTML)
     window.openModal = function(imageSrc) {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA DEL CARRITO DE COMPRAS (NUEVA) ---
+    // --- LÓGICA DEL CARRITO DE COMPRAS ---
 
     let cart = []; // Array para almacenar los productos en el carrito
 
@@ -105,11 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`"${productName}" añadido al carrito!`);
     };
 
-    // js/script.js (función renderCart() modificada)
-
     // Función para dar formato de miles (Ej: 135000 -> 135.000)
     function formatPrice(number) {
-        return number.toLocaleString('es-AR', { minimumFractionDigits: 0 }); // Usar es-AR para formato de miles
+        // Usar es-AR para formato de miles sin decimales
+        return number.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }); 
     }
 
     // Función para renderizar el carrito en el modal
@@ -146,16 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeFromCart(idToRemove);
             });
         });
-    }
-    
-        // Añadir listeners a los botones de remover
-        document.querySelectorAll('.remove-from-cart-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const idToRemove = parseInt(e.target.dataset.id);
-                removeFromCart(idToRemove);
-            });
-        });
-    }
+    } // <-- ESTA ES LA CLAVE: renderCart() cierra aquí.
 
     // Función para remover un producto del carrito
     function removeFromCart(productId) {
@@ -181,7 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Tu carrito está vacío. ¡Añade algunos diseños para comprar!");
                 return;
             }
-            const confirmPurchase = confirm(`¿Confirmas la compra de ${cart.length} productos por $${cartTotalElement.textContent}?`);
+            // Aseguramos que el alert muestre el total con el formato correcto
+            const confirmPurchase = confirm(`¿Confirmas la compra de ${cart.reduce((sum, item) => sum + item.quantity, 0)} artículos por $${cartTotalElement.textContent}?`);
             if (confirmPurchase) {
                 alert("¡Gracias por tu compra! Nos pondremos en contacto contigo para los detalles de tu diseño.");
                 cart = []; // Vaciar el carrito
@@ -193,4 +184,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCartIconQuantity(); // Inicializar cantidad del carrito al cargar
-});
+}); // <--- Y el DOMContentLoaded cierra aquí.
