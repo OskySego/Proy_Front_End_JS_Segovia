@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios | Osky Diseños</title>
+    <title>Tienda de Servicios | Osky Diseños</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -18,18 +19,22 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html" class="active">Servicios</a></li>
+                <li><a href="productos.html" class="active">Tienda de Servicios</a></li>
                 <li><a href="resenas.html">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button>
+        <div class="cart-icon-container" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-quantity" class="cart-quantity-badge">0</span>
+        </div>
     </header>
     
     <main class="page-content">
         <section class="page-header">
-            <h2>Mis Servicios y Productos</h2>
-            <p class="subtitle">Diseño digital y gráfico hecho a medida para tus objetivos.</p>
+            <h2>Nuestra Tienda de Diseños Digitales</h2>
+            <p class="subtitle">Encuentra el diseño perfecto para impulsar tu marca.</p>
         </section>
 
         <section id="productos">
@@ -37,46 +42,84 @@
                 
                 <div class="card-product">
                     <a href="#" onclick="openModal('img/banner web profesional.svg')" class="product-image-link">
-                        <img src="img/banner web profesional.svg" alt="Muestra de Diseño Web" class="product-img">
+                        <img src="img/banner web profesional.svg" alt="Diseño Web Express" class="product-img">
                     </a>
-                    <h4>Diseño Web Profesional</h4>
-                    <p>Desarrollo de sitios web modernos, optimizados y adaptables a todos los dispositivos.</p>
+                    <h4>Diseño Web Express</h4>
+                    <p>Web simple y moderna en 7 días. Ideal para empezar.</p>
                     <ul class="features">
-                        <li>Webs Corporativas</li>
-                        <li>Landing Pages</li>
-                        <li>E-commerce (Base)</li>
+                        <li>Landing Page Personalizada</li>
+                        <li>Diseño Adaptable (Responsive)</li>
+                        <li>Integración con Redes Sociales</li>
+                        <li>Soporte Básico 30 días</li>
                     </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                    <span class="product-price">$350.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(1, 'Diseño Web Express', 350.00)">Añadir al Carrito</button>
                 </div>
 
                 <div class="card-product">
                     <a href="#" onclick="openModal('img/identidad.svg')" class="product-image-link">
-                        <img src="img/identidad.svg" alt="Muestra de Branding y Logotipo" class="product-img">
+                        <img src="img/identidad.svg" alt="Branding Esencial" class="product-img">
                     </a>
-                    <h4>Branding e Identidad</h4>
-                    <p>Creación de una identidad visual sólida, desde logotipos hasta manuales de marca.</p>
+                    <h4>Paquete de Branding Esencial</h4>
+                    <p>Logotipo y elementos clave para una marca memorable.</p>
                     <ul class="features">
-                        <li>Logotipo Principal</li>
-                        <li>Paleta de Colores</li>
-                        <li>Guía de Marca</li>
+                        <li>Logotipo Principal (3 Propuestas)</li>
+                        <li>Paleta de Colores Definida</li>
+                        <li>Tipografías Corporativas</li>
+                        <li>Manual de Marca Básico</li>
                     </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                    <span class="product-price">$200.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(2, 'Paquete de Branding Esencial', 200.00)">Añadir al Carrito</button>
                 </div>
 
                 <div class="card-product">
                     <a href="#" onclick="openModal('img/folleteria.svg')" class="product-image-link">
-                        <img src="img/folleteria.svg" alt="Muestra de Folletería y Flyers" class="product-img">
+                        <img src="img/folleteria.svg" alt="Folletería y Flyers" class="product-img">
                     </a>
-                    <h4>Folletería y Flyers</h4>
-                    <p>Diseño de materiales impresos que comunican con impacto y profesionalismo.</p>
+                    <h4>Diseño de Folletería y Flyers</h4>
+                    <p>Material impreso profesional para campañas o eventos.</p>
                     <ul class="features">
-                        <li>Diseño de Flyers</li>
-                        <li>Catálogos Digitales</li>
-                        <li>Tarjetas de Presentación</li>
+                        <li>Diseño de Flyer A5/A4</li>
+                        <li>2 Propuestas de Diseño</li>
+                        <li>Archivos Listos para Imprenta</li>
+                        <li>Revisión Ilimitada</li>
                     </ul>
-                    <a href="contacto.html" class="cta-small">¡Cotizar!</a>
+                    <span class="product-price">$80.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(3, 'Folletería y Flyers', 80.00)">Añadir al Carrito</button>
                 </div>
 
+                <div class="card-product">
+                    <a href="#" onclick="openModal('img/banner-redes-sociales.svg')" class="product-image-link">
+                        <img src="img/banner-redes-sociales.svg" alt="Banner para Redes Sociales" class="product-img">
+                    </a>
+                    <h4>Pack Banners Redes Sociales</h4>
+                    <p>Diseños atractivos para tus campañas en RRSS.</p>
+                    <ul class="features">
+                        <li>3 Banners Personalizados</li>
+                        <li>Formato JPG/PNG Optimizado</li>
+                        <li>Adaptado a Facebook/Instagram</li>
+                        <li>Entrega en 48 Horas</li>
+                    </ul>
+                    <span class="product-price">$50.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(4, 'Pack Banners Redes Sociales', 50.00)">Añadir al Carrito</button>
+                </div>
+
+                <div class="card-product">
+                    <a href="#" onclick="openModal('img/tarjeta-digital.svg')" class="product-image-link">
+                        <img src="img/tarjeta-digital.svg" alt="Tarjeta Digital" class="product-img">
+                    </a>
+                    <h4>Tarjeta de Presentación Digital</h4>
+                    <p>Impacta con una tarjeta moderna y ecológica.</p>
+                    <ul class="features">
+                        <li>Diseño Personalizado (Click-to-Call)</li>
+                        <li>Interactiva (enlace a WhatsApp, Web)</li>
+                        <li>Formato PDF/Imagen</li>
+                        <li>Entrega Rápida</li>
+                    </ul>
+                    <span class="product-price">$30.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(5, 'Tarjeta Digital', 30.00)">Añadir al Carrito</button>
+                </div>
+                
             </div>
         </section>
     </main>
@@ -87,46 +130,26 @@
             <img id="modal-image" src="" alt="Imagen ampliada">
         </div>
     </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-button" id="close-cart-btn">&times;</span>
+            <h3>Tu Carrito de Diseños</h3>
+            <div id="cart-items" class="cart-items-container">
+                <p class="empty-cart-message">El carrito está vacío. ¡Añade algunos diseños!</p>
+            </div>
+            <div class="cart-summary">
+                <span>Total:</span>
+                <span class="cart-total-amount">$<span id="cart-total">0.00</span></span>
+            </div>
+            <button id="checkout-btn" class="cta-button">Realizar Compra</button>
+        </div>
+    </div>
         
     <footer>
         <p>&copy; 2025 Osky Diseños | Portfolio de Diseño Web y Gráfico</p>
     </footer>
 
-    <script>
-        const modal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
-
-        function openModal(imageSrc) {
-            modalImage.src = imageSrc;
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeModal() {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; 
-        }
-
-        // Cierre con la tecla ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                closeModal();
-            }
-        });
-
-        // Cierre al hacer clic en el fondo
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Lógica del menú móvil
-        const nav = document.querySelector('.main-nav');
-        const toggle = document.querySelector('.menu-toggle');
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('open');
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

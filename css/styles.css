@@ -500,3 +500,213 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: #333 !important; 
     /* El truco es usar la sombra interna para cubrir el color de autocompletado */
 }
+/* --- Estilos para E-commerce (NUEVOS) --- */
+
+/* Contenedor del ícono del carrito en el header */
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+    color: white;
+    font-size: 1.8rem;
+    margin-left: 20px;
+    display: flex; /* Para centrar el badge */
+    align-items: center;
+}
+
+/* Badge de cantidad en el carrito */
+.cart-quantity-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #8BC34A; /* Verde Lima */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 7px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.2;
+    display: none; /* Se muestra solo si la cantidad > 0 con JS */
+}
+
+/* Precios de producto */
+.product-price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5F4B8B; /* Violeta Intenso */
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Botón "Añadir al Carrito" */
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    background-color: #8BC34A; /* Verde Lima */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #689F38; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
+
+/* --- Estilos del Modal del Carrito (E-commerce) --- */
+
+.modal-content.cart-modal-content {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 500px; /* Ancho específico para el carrito */
+    max-height: 90vh; /* Para que el carrito no sea más alto que la ventana */
+    overflow-y: auto; /* Scroll si hay muchos ítems */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio entre elementos */
+    position: relative; /* Para el botón de cerrar */
+}
+
+.cart-modal-content h3 {
+    color: #5F4B8B;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.cart-items-container {
+    width: 100%;
+    max-height: 300px; /* Altura máxima para la lista de ítems */
+    overflow-y: auto;
+    border-top: 1px solid #EDE7F6;
+    border-bottom: 1px solid #EDE7F6;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dotted #EDE7F6;
+    font-size: 1rem;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item span {
+    color: #333;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: #5F4B8B;
+    margin-left: auto; /* Empuja el precio a la derecha */
+    padding-left: 10px;
+}
+
+.remove-from-cart-btn {
+    background: none;
+    border: none;
+    color: #F44336; /* Rojo para remover */
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.remove-from-cart-btn:hover {
+    color: #D32F2F;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    font-style: italic;
+}
+
+.cart-summary {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #5F4B8B; /* Línea divisoria más fuerte */
+}
+
+.cart-total-amount {
+    color: #8BC34A; /* Verde Lima para el total */
+}
+
+/* El botón de checkout usará .cta-button que ya está estilizado */
+#checkout-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #8BC34A; /* Verde Lima */
+    box-shadow: 0 4px #689F38; /* Sombra más oscura para el Verde */
+}
+
+#checkout-btn:hover {
+    background-color: #689F38;
+}
+
+/* Ajustes para el botón de cerrar del modal del carrito */
+.cart-modal-content .close-button {
+    top: 10px; /* Ajustar posición del botón de cerrar */
+    right: 15px;
+    font-size: 2.5rem; /* Un poco más pequeño que el de imagen */
+    color: #5F4B8B; /* Color violeta para el cerrar del carrito */
+}
+.cart-modal-content .close-button:hover {
+    color: #8BC34A; /* Verde Lima al pasar el ratón */
+}
+
+/* Media query para móviles en el carrito */
+@media (max-width: 600px) {
+    .modal-content.cart-modal-content {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    .cart-item {
+        flex-wrap: wrap; /* Permite que los elementos salten de línea */
+        gap: 5px;
+    }
+    .remove-from-cart-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: right;
+        font-size: 0.75rem;
+    }
+    .cart-item span:first-child {
+        width: 70%; /* Nombre del producto ocupa más espacio */
+    }
+    .cart-item-price {
+        width: 25%;
+        text-align: right;
+    }
+}
