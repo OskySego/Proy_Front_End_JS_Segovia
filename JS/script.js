@@ -105,6 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`"${productName}" añadido al carrito!`);
     };
 
+    // js/script.js (función renderCart() modificada)
+
+    // Función para dar formato de miles (Ej: 135000 -> 135.000)
+    function formatPrice(number) {
+        return number.toLocaleString('es-AR', { minimumFractionDigits: 0 }); // Usar es-AR para formato de miles
+    }
+
     // Función para renderizar el carrito en el modal
     function renderCart() {
         if (!cartItemsContainer || !cartTotalElement) return;
@@ -116,19 +123,31 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItemsContainer.innerHTML = '<p class="empty-cart-message">El carrito está vacío. ¡Añade algunos diseños!</p>';
         } else {
             cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('cart-item');
                 itemElement.innerHTML = `
                     <span>${item.name} (x${item.quantity})</span>
-                    <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                    <span class="cart-item-price">$${formatPrice(itemTotal)}</span> 
                     <button class="remove-from-cart-btn" data-id="${item.id}">Remover</button>
                 `;
                 cartItemsContainer.appendChild(itemElement);
-                total += item.price * item.quantity;
+                total += itemTotal;
             });
         }
-        cartTotalElement.textContent = total.toFixed(2);
         
+        // Mostrar el total con formato de miles
+        cartTotalElement.textContent = formatPrice(total);
+        
+        // Añadir listeners a los botones de remover
+        document.querySelectorAll('.remove-from-cart-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const idToRemove = parseInt(e.target.dataset.id);
+                removeFromCart(idToRemove);
+            });
+        });
+    }
+    
         // Añadir listeners a los botones de remover
         document.querySelectorAll('.remove-from-cart-btn').forEach(button => {
             button.addEventListener('click', (e) => {
