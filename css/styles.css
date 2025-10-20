@@ -1,8 +1,10 @@
-/* Paleta de Colores Modificada: Violeta (base) y Verde (Acento)
--Violeta Intenso (Principal): #5FAB8B (Slate Blue más oscuro)
--Violeta Pastel (Secundario/Fondo): #EDE7F6 (Un gris lavanda muy suave)
--Verde Lima Brillante (Acento/CTA): #8BC34A (Lime Green)
--Gris Claro (Texto Secundario/Fondo): #F5F5F5 (Light Gray)
+/* Paleta de Colores Modificada: Violeta (Base) y Dorado/Verde (Acento)
+- Violeta Profundo (Principal): #5D0067
+- Dorado (Acento/CTA): #FFC72C
+- Verde Oscuro/Teal (Fondo Base): #004d40
+- Azul Marino (Texto Oscuro): #0D1321
+- Gris/Blanco Roto (Texto Claro): #F7F7F7
+- Verde Lima (CTA Secundario): #8BC34A
 */
 
 /* --- Base y Tipografía --- */
@@ -15,8 +17,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #EDE7F6; /* Fondo Base Lavanda Pastel */
-    color: #333;
+    background-color: #004d40; /* FOND: Verde Oscuro/Teal */
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto (Legible sobre fondo oscuro) */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,23 +26,24 @@ body {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: #5F4B8B; /* Violeta Intenso textos de titulos */
+    color: #FFC72C; /* TEXT: Dorado (Para títulos, alto contraste) */
     margin-bottom: 0.5rem;
 }
 .subtitle {
     font-size: 1.1rem;
-    color: #5F4B8B; /* sUBTITULOS EN VIOLETA OSCURO*/
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
     margin-bottom: 2rem;
 }
 main {
     flex-grow: 1;
     padding: 0;
-    background-color: #fcfcfc; /* Fondo blanco para el contenido principal */
+    background-color: #F7F7F7; /* FOND: Gris/Blanco Roto (Contenido principal) */
+    color: #0D1321; /* TEXT: Azul Marino (Legible sobre fondo claro) */
 }
 
-/* --- 1. Header (Se mantiene) --- */
+/* --- 1. Header --- */
 .main-header {
-    background-color: #5F4B8B; /* Violeta Intenso */
+    background-color: #5D0067; /* FOND: Violeta Profundo */
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -48,7 +51,7 @@ main {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .header-logo {
@@ -61,7 +64,7 @@ main {
     display: none;
     background: none;
     border: none;
-    color: white;
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
     font-size: 2rem;
     cursor: pointer;
 }
@@ -73,28 +76,60 @@ main {
 
 .main-nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
     font-weight: 600;
-    padding: 0 5rem 1rem;
+    padding: 0 1.5rem 1rem;
     display: block;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
-    background-color: #483D8B;
+    background-color: #FFC72C; /* FOND: Dorado */
+    color: #5D0067; /* TEXT: Violeta Profundo */
 }
 
-/* --- 2. HERO (Se mantiene) --- */
+/* Contenedor del ícono del carrito en el header */
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+    color: #FFC72C; /* ICON: Dorado */
+    font-size: 1.8rem;
+    margin-left: 20px;
+    display: flex; 
+    align-items: center;
+}
+
+/* Badge de cantidad en el carrito */
+.cart-quantity-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #8BC34A; /* FOND: Verde Lima */
+    color: #0D1321; /* TEXT: Azul Marino */
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 7px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.2;
+    display: none; 
+}
+
+
+/* --- 2. HERO --- */
 .hero-page-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 3.5rem 0 3.5rem 0;
     text-align: center;
-    background: linear-gradient(135deg, #ede7f6 0%, #fff 100%);
-    border-bottom: 5px solid #5F4B8B;
+    /* Degradado de Violeta a Azul Marino */
+    background: linear-gradient(135deg, #5D0067 0%, #0D1321 100%);
+    border-bottom: 5px solid #FFC72C; /* BORDER: Dorado */
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
 }
 
 .hero-content {
@@ -118,27 +153,31 @@ main {
 
 .cta-button {
     display: inline-block;
-    background-color: #8bc34a; /* Verde Lima Brillante */
-    color: white;
+    background-color: #FFC72C; /* FOND: Dorado (Acento) */
+    color: #0D1321; /* TEXT: Azul Marino */
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     margin-top: 1rem;
-    box-shadow: 0 4px #689f38; /* Sombra más oscura */
+    box-shadow: 0 4px #5D0067; /* SHADOW: Violeta Profundo */
     transition: all 0.3s ease;
 }
 
 .cta-button:active {
     transform: translateY(2px);
-    box-shadow: 0 2px #483D8B;
+    box-shadow: 0 2px #5D0067; /* SHADOW: Violeta Profundo */
 }
 
-/* --- 3. Sección de Resumen (Se mantiene) --- */
+/* --- 3. Sección de Resumen --- */
 .summary-section {
-    background-color: #fff;
+    background-color: #004d40; /* FOND: Verde Oscuro/Teal */
     padding: 4rem 5%;
     text-align: center;
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
+}
+.summary-section h2 {
+    color: #FFC72C; /* Titulo de sección en Dorado */
 }
 
 .summary-cards {
@@ -158,6 +197,8 @@ main {
     flex: 1 1 250px;
     padding: 1.5rem;
     border-radius: 10px;
+    background-color: #F7F7F7; /* FOND: Gris/Blanco Roto */
+    color: #0D1321; /* TEXT: Azul Marino */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
@@ -166,64 +207,70 @@ main {
     transform: translateY(-8px);
 }
 
+.summary-card h3 {
+    color: #5D0067; /* Titulo de tarjeta en Violeta Profundo */
+}
+
 .violet-bg {
-    background-color: #5F4B8B; /* Violeta Intenso */
-    color: white;
+    background-color: #5D0067; /* FOND: Violeta Profundo */
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
 }
 
 .violet-bg h3 {
-    color: white;
+    color: #FFC72C; /* TEXT: Dorado */
 }
 
 .light-bg {
-    background-color: #EDE7F6; /* Lavanda Pastel */
-    color: #333;
+    background-color: #F7F7F7; /* FOND: Gris/Blanco Roto */
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
-/* --- 4. Estilos Comunes de páginas secundarias (Optimizado) --- */
+/* --- 4. Estilos Comunes de páginas secundarias --- */
 .page-content section {
-    /* Quitamos el padding global para que cada sección lo maneje */
     padding: 0; 
     text-align: center;
     border-bottom: none;
 }
 
 .page-header {
-    /* Aquí definimos el padding para el encabezado de la página */
     padding: 3rem 5% 2rem; 
     text-align: center;
     border-bottom: none;
 }
+.page-header h2 {
+    color: #5D0067; /* Titulo de página en Violeta Profundo */
+}
 
-/* --- 5. Seccion Productos (Flexbox y Responsive Corregidos) --- */
+/* --- 5. Seccion Productos --- */
 .productos-container {
     display: flex;
-    flex-wrap: wrap; /* Permitimos que las tarjetas salten de línea */
+    flex-wrap: wrap; 
     gap: 20px;
-    padding: 0 20px; /* Padding solo lateral */
+    padding: 0 20px; 
     justify-content: center;
-    max-width: 1200px; /* Ancho máximo para el diseño de escritorio */
-    margin: 40px auto; /* Centrado y margen superior/inferior */
+    max-width: 1200px; 
+    margin: 40px auto; 
 }
 
 .card-product {
-    flex: 1 1 300px; /* Ancho base de 300px */
+    flex: 1 1 300px; 
     max-width: 350px;
     min-width: 280px;
-    width: 100%; /* Asegura que ocupe todo el ancho en móvil */
-    background-color: #fff;
-    border: 1px solid #EDE7F6; /* Borde suave */
+    width: 100%; 
+    background-color: #FFFFFF; /* FOND: Blanco puro para la tarjeta de producto */
+    border: 1px solid #004d40; /* BORDER: Verde Oscuro/Teal */
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 .card-product h4 {
-    color: #5F4B8B;
+    color: #5D0067; /* TEXT: Violeta Profundo */
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    border-bottom: 2px solid #EDE7F6;  /* Línea decorativa */
+    border-bottom: 2px solid #004d40; /* BORDER: Verde Oscuro/Teal */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -245,15 +292,15 @@ main {
 
 .features li {
     padding: 0.3rem 0;
-    border-bottom: 1px dotted #EDE7F6; /* Línea punteada suave */
-    color: #5F4B8B;
+    border-bottom: 1px dotted #004d40; /* BORDER: Verde Oscuro/Teal */
+    color: #0D1321; /* TEXT: Azul Marino */
     font-size: 0.95rem;
 }
 
 .cta-small {
     display: inline-block;
-    background-color: #EDE7F6; /* Lavanda Pastel */
-    color: #5F4B8B; /* Violeta Intenso */
+    background-color: #8BC34A; /* FOND: Verde Lima */
+    color: #0D1321; /* TEXT: Azul Marino */
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
@@ -263,36 +310,77 @@ main {
 }
 
 .cta-small:hover {
-    background-color: #8bc34a;  /* Verde Lima Brillante */
-    color: white;
+    background-color: #FFC72C; /* FOND: Dorado */
+    color: #5D0067; /* TEXT: Violeta Profundo */
 }
 
-/* --- 6. Sección reseñas (Se mantiene) --- */
+/* Precios de producto */
+.product-price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5D0067; /* TEXT: Violeta Profundo */
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Botón "Añadir al Carrito" */
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    background-color: #8BC34A; /* FOND: Verde Lima */
+    color: #0D1321; /* TEXT: Azul Marino */
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #FFC72C; /* FOND: Dorado */
+    color: #5D0067; /* TEXT: Violeta Profundo */
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
+
+/* --- 6. Sección reseñas --- */
 .reseñas-grid-page {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
     margin-top: 2rem;
+    padding: 0 5%; /* Asegura que no se pegue a los bordes */
 }
 
 .reseña-item {
-    background-color: #fff;
+    background-color: #FFFFFF; /* FOND: Blanco Puro (Alto contraste para legibilidad) */
     padding: 1.5rem;
     border-radius: 10px;
-    border-left: 5px solid #6A5ACD;
+    border-left: 5px solid #5D0067; /* BORDER: Violeta Profundo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     text-align: left;
+    color: #0D1321; /* TEXT: Azul Marino (Asegura legibilidad) */
 }
 
 .reseña-item p {
     font-style: italic;
     margin-bottom: 0.7rem;
+    color: #0D1321; /* TEXT: Azul Marino (Asegura legibilidad sobre fondo blanco) */
 }
 
 .reseña-item footer {
     font-weight: 700;
-    color: #483D8B;
+    color: #FFC72C; /* ¡CORRECCIÓN! TEXT: Dorado (Acento claro) sobre fondo blanco */
     font-size: 0.9rem;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4); /* Sombra para mejor lectura del dorado sobre blanco */
 }
 
 @media (min-width: 768px) {
@@ -301,17 +389,18 @@ main {
     }
 }
 
-/* --- 7. Sección Contacto (Se mantiene) --- */
+/* --- 7. Sección Contacto --- */
 .contact-section-page {
     padding: 3rem 5% 6rem 5%;
+    background-color: #F7F7F7; /* FOND: Gris/Blanco Roto */
 }
 
 .contact-form {
     max-width: 550px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #f9f9f9;
-    border: 1px solid #d8bfd8;
+    background-color: #FFFFFF; /* FOND: Blanco Puro */
+    border: 1px solid #004d40; /* BORDER: Verde Oscuro/Teal */
     border-radius: 10px;
     text-align: left;
 }
@@ -320,7 +409,7 @@ main {
     display: block;
     margin-bottom: 1rem;
     font-weight: 700;
-    color: #483D8B;
+    color: #5D0067; /* TEXT: Violeta Profundo */
 }
 
 .contact-form input,
@@ -328,15 +417,17 @@ main {
     width: 100%;
     padding: 0.8rem;
     margin-top: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #004d40; /* BORDER: Verde Oscuro/Teal */
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
+    color: #0D1321; /* TEXT: Azul Marino (Asegura legibilidad al escribir) */
+    background-color: #F7F7F7; /* FOND: Gris/Blanco Roto */
 }
 
 .contact-form button {
     display: inline-block;
-    background-color: #8bc34a; /* Verde Lima Brillante */
-    color: white;
+    background-color: #5D0067; /* FOND: Violeta Profundo */
+    color: #FFC72C; /* TEXT: Dorado */
     border: none;
     padding: 0.8rem 2rem;
     margin-top: 1.5rem;
@@ -349,10 +440,11 @@ main {
 }
 
 .contact-form button:hover {
-    background-color: #689f38; /* Verde Lima Más Oscuro */
+    background-color: #FFC72C; /* FOND: Dorado */
+    color: #5D0067; /* TEXT: Violeta Profundo */
 }
 
-/* --- 8. Media Queries Globales y Desktop (Se mantiene) --- */
+/* --- 8. Media Queries Globales y Desktop --- */
 @media (min-width: 768px) {
     .menu-toggle {
         display: none;
@@ -395,17 +487,17 @@ main {
     }
 }
 
-/* --- 9. Footer (Se mantiene) --- */
+/* --- 9. Footer --- */
 footer {
-    background-color: #EDE7F6;  /* Lavanda Pastel */
-    color: #5F4B8B; /* Violeta Intenso */
+    background-color: #5D0067; /* FOND: Violeta Profundo */
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
     text-align: center;
     padding: 1.5rem 5%;
     font-size: 0.9rem;
     margin-top: auto;
 }
 
-/* --- 10. Media Query para pantallas muy pequeñas (Se mantiene) --- */
+/* --- 10. Media Query para pantallas muy pequeñas --- */
 @media (max-width: 767px) {
     .menu-toggle {
         display: block;
@@ -415,7 +507,7 @@ footer {
         position: absolute;
         top: 90px;
         right: 5%;
-        background-color: #6A5ACD;
+        background-color: #5D0067; /* FOND: Violeta Profundo */
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         width: 200px;
@@ -432,7 +524,7 @@ footer {
     }
     .main-nav ul li a {
         padding: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(247, 247, 247, 0.2); /* BORDER: Gris/Blanco Roto semi-transparente */
     }
     .main-nav ul li a:last-child {
         border-bottom: none;
@@ -470,7 +562,7 @@ footer {
     max-height: 100%;
     display: block;
     object-fit: contain;
-    border: 5px solid white;
+    border: 5px solid #FFC72C; /* BORDER: Dorado */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -478,7 +570,7 @@ footer {
     position: absolute;
     top: -30px; 
     right: -30px;
-    color: white;
+    color: #F7F7F7; /* TEXT: Gris/Blanco Roto */
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
@@ -487,7 +579,7 @@ footer {
 }
 
 .close-button:hover {
-    color: #8bc34a; /* Verde Lima Brillante al pasar el ratón */
+    color: #FFC72C; /* TEXT: Dorado */
 }
 
 /* --- TRUCO CSS PARA EVITAR AUTOCOMPLETADO VISUAL --- */
@@ -496,94 +588,28 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
     /* Forzamos que el fondo y el color de texto vuelvan a ser los normales */
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    -webkit-text-fill-color: #333 !important; 
-    /* El truco es usar la sombra interna para cubrir el color de autocompletado */
+    -webkit-box-shadow: 0 0 0px 1000px #F7F7F7 inset !important; /* FOND: Gris/Blanco Roto */
+    -webkit-text-fill-color: #0D1321 !important; /* TEXT: Azul Marino */
 }
-/* --- Estilos para E-commerce (NUEVOS) --- */
-
-/* Contenedor del ícono del carrito en el header */
-.cart-icon-container {
-    position: relative;
-    cursor: pointer;
-    color: white;
-    font-size: 1.8rem;
-    margin-left: 20px;
-    display: flex; /* Para centrar el badge */
-    align-items: center;
-}
-
-/* Badge de cantidad en el carrito */
-.cart-quantity-badge {
-    position: absolute;
-    top: -8px;
-    right: -12px;
-    background-color: #8BC34A; /* Verde Lima */
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 7px;
-    min-width: 20px;
-    text-align: center;
-    line-height: 1.2;
-    display: none; /* Se muestra solo si la cantidad > 0 con JS */
-}
-
-/* Precios de producto */
-.product-price {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #5F4B8B; /* Violeta Intenso */
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-/* Botón "Añadir al Carrito" */
-.add-to-cart-btn {
-    display: block;
-    width: 100%;
-    background-color: #8BC34A; /* Verde Lima */
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-    font-size: 1rem;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #689F38; /* Verde más oscuro al pasar el ratón */
-    transform: translateY(-2px);
-}
-
-.add-to-cart-btn:active {
-    transform: translateY(0);
-}
-
-
 /* --- Estilos del Modal del Carrito (E-commerce) --- */
 
 .modal-content.cart-modal-content {
-    background-color: #fff;
+    background-color: #FFFFFF; /* FOND: Blanco Puro */
     padding: 2.5rem;
     border-radius: 12px;
-    max-width: 500px; /* Ancho específico para el carrito */
-    max-height: 90vh; /* Para que el carrito no sea más alto que la ventana */
-    overflow-y: auto; /* Scroll si hay muchos ítems */
+    max-width: 500px; 
+    max-height: 90vh; 
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Espacio entre elementos */
-    position: relative; /* Para el botón de cerrar */
+    gap: 15px; 
+    position: relative; 
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 .cart-modal-content h3 {
-    color: #5F4B8B;
+    color: #5D0067; /* TEXT: Violeta Profundo */
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -592,10 +618,10 @@ input:-webkit-autofill:active {
 
 .cart-items-container {
     width: 100%;
-    max-height: 300px; /* Altura máxima para la lista de ítems */
+    max-height: 300px; 
     overflow-y: auto;
-    border-top: 1px solid #EDE7F6;
-    border-bottom: 1px solid #EDE7F6;
+    border-top: 1px solid #004d40; /* BORDER: Verde Oscuro/Teal */
+    border-bottom: 1px solid #004d40; /* BORDER: Verde Oscuro/Teal */
     padding: 1rem 0;
     margin-bottom: 1.5rem;
 }
@@ -605,8 +631,9 @@ input:-webkit-autofill:active {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 0;
-    border-bottom: 1px dotted #EDE7F6;
+    border-bottom: 1px dotted #004d40; /* BORDER: Verde Oscuro/Teal */
     font-size: 1rem;
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 .cart-item:last-child {
@@ -614,20 +641,20 @@ input:-webkit-autofill:active {
 }
 
 .cart-item span {
-    color: #333;
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 .cart-item-price {
     font-weight: 700;
-    color: #5F4B8B;
-    margin-left: auto; /* Empuja el precio a la derecha */
+    color: #5D0067; /* TEXT: Violeta Profundo */
+    margin-left: auto; 
     padding-left: 10px;
 }
 
 .remove-from-cart-btn {
     background: none;
     border: none;
-    color: #F44336; /* Rojo para remover */
+    color: #F44336; /* TEXT: Rojo para remover */
     font-size: 0.85rem;
     cursor: pointer;
     margin-left: 10px;
@@ -640,7 +667,7 @@ input:-webkit-autofill:active {
 
 .empty-cart-message {
     text-align: center;
-    color: #777;
+    color: #777; 
     padding: 20px;
     font-style: italic;
 }
@@ -654,36 +681,38 @@ input:-webkit-autofill:active {
     font-weight: 700;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 2px solid #5F4B8B; /* Línea divisoria más fuerte */
+    border-top: 2px solid #5D0067; /* BORDER: Violeta Profundo */
 }
 
 .cart-total-amount {
-    color: #8BC34A; /* Verde Lima para el total */
+    color: #8BC34A; /* TEXT: Verde Lima para el total */
 }
 
-/* El botón de checkout usará .cta-button que ya está estilizado */
+/* El botón de checkout usa .cta-button */
 #checkout-btn {
     width: 100%;
     margin-top: 1rem;
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    background-color: #8BC34A; /* Verde Lima */
-    box-shadow: 0 4px #689F38; /* Sombra más oscura para el Verde */
+    background-color: #FFC72C; /* FOND: Dorado */
+    box-shadow: 0 4px #5D0067; /* SHADOW: Violeta Profundo */
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 #checkout-btn:hover {
-    background-color: #689F38;
+    background-color: #8BC34A; /* FOND: Verde Lima */
+    color: #0D1321; /* TEXT: Azul Marino */
 }
 
 /* Ajustes para el botón de cerrar del modal del carrito */
 .cart-modal-content .close-button {
-    top: 10px; /* Ajustar posición del botón de cerrar */
+    top: 10px; 
     right: 15px;
-    font-size: 2.5rem; /* Un poco más pequeño que el de imagen */
-    color: #5F4B8B; /* Color violeta para el cerrar del carrito */
+    font-size: 2.5rem; 
+    color: #5D0067; /* TEXT: Violeta Profundo */
 }
 .cart-modal-content .close-button:hover {
-    color: #8BC34A; /* Verde Lima al pasar el ratón */
+    color: #FFC72C; /* TEXT: Dorado */
 }
 
 /* Media query para móviles en el carrito */
@@ -693,7 +722,7 @@ input:-webkit-autofill:active {
         padding: 1.5rem;
     }
     .cart-item {
-        flex-wrap: wrap; /* Permite que los elementos salten de línea */
+        flex-wrap: wrap; 
         gap: 5px;
     }
     .remove-from-cart-btn {
@@ -703,10 +732,10 @@ input:-webkit-autofill:active {
         font-size: 0.75rem;
     }
     .cart-item span:first-child {
-        width: 70%; /* Nombre del producto ocupa más espacio */
+        width: 70%; 
     }
     .cart-item-price {
         width: 25%;
         text-align: right;
     }
-} /* fin del codigo*/
+}
